@@ -1,0 +1,104 @@
+<!doctype html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Birth Year</title>
+        <style>
+            div {
+                text-align: center;
+            }
+
+           .number{
+                height:30px; 
+                width:400px; 
+                padding-left:10px;
+           }
+
+           .button {
+                height:35px;
+           }
+        </style>
+    </head>
+
+    <body>
+    <div>
+        <form style="margin-top:100px">
+            <input placeholder="Enter Your Age..." type="number" id="number" class="number" />
+            <input type="button" value="Find Year" id="button" class="button"/>
+            <div><p id="year"></p></div> <br>
+
+            <input placeholder="Enter desired year" type="number" id="number1" class="number"/>
+            <input type="button" value="Find Age" id="button1" class="button"/>
+            <div><p id="year1"></p></div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+        function calculate() {
+        
+            var age = document.getElementById("number").value;
+            
+            if (age == "" || age == 0) {
+                
+                window.alert("Please type your correct age!");
+                return;
+            }
+            
+            var date = new Date().getFullYear();
+            
+            var yob = date - age;
+            
+            document.getElementById("year").style.display = "block";
+            document.getElementById("year").innerHTML = "Your birth year is " + yob;
+            
+        }
+
+
+
+
+        function calculate2() {
+        
+        var year = document.getElementById("number1").value;
+        
+        if (year == "" || year == 0) {
+            
+            window.alert("Please type your correct age!");
+            return;
+        }
+        
+        var date = new Date().getFullYear();
+        
+        var age = year - date;
+        
+        document.getElementById("year").style.display = "block";
+        document.getElementById("year1").innerHTML = "You will be " + age + " in the year " + year;
+        
+    }
+
+
+
+
+        
+
+        document.getElementById("year").style.display = "none";
+        
+        document.getElementById("button").onclick = function() {  calculate();  };
+        document.getElementById("button1").onclick = function() {  calculate2();  };
+
+
+    </script>
+
+
+
+</body>
+</html>
